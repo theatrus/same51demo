@@ -17,13 +17,24 @@ panic-halt = "0.2"
 # Uncomment for the allocator example.
 alloc-cortex-m = "0.4"
 
+usb-device = "0.2"
+usbd-serial = "0.1"
+
 [dependencies.atsamd-hal]
 features = ["same51j"]
-path = "../atsamd/hal"
+git = "https://github.com/atsamd-rs/atsamd"
+revision = "master"
+#path = "../atsamd/hal"
 
 [dependencies.atsame51j]
-path = "../atsamd/pac/atsame51j"
+#path = "../atsamd/pac/atsame51j"
+git = "https://github.com/atsamd-rs/atsamd"
+revision = "master"
 
+
+[dependencies.blueacro_driver_hv_bsp]
+path = "../blueacro_driver_hv_bsp"
+features = ["default", "rt", "usb"]
 # Uncomment for the device example.
 # Update `memory.x`, set target to `thumbv7em-none-eabihf` in `.cargo/config`,
 # and then use `cargo build --examples device` to build it.
